@@ -10,6 +10,32 @@ function _sumFibs( maxFibValue ) {
 
   // do your work here
 
+  let fibSeq = [0, 1];
+
+  let newArr = [];
+
+  let evenArr = [];
+
+  for(i = 0; i < maxFibValue; i++) {
+    fibSeq.push(fibSeq[i] + fibSeq[i + 1]);
+  }
+
+  fibSeq.forEach(function(e) {
+    if(e <= maxFibValue) {
+      newArr.push(e);
+    }
+  })
+
+  newArr.forEach(function(e) {
+    if(e % 2 === 0) {
+      evenArr.push(e);
+    }
+  })
+
+  evenArr.forEach(function(e) {
+    sum += e;
+  })
+
   return sum;
 }
 
