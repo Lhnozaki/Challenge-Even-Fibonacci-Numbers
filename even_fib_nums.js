@@ -5,57 +5,43 @@
  * @param  {Number} maxFibValue
  * @return {Number} sum
  */
-function _sumFibs( maxFibValue ) {
+function _sumFibs(maxFibValue) {
   let sum = 0;
 
   // do your work here
 
-  let fibSeq = [0, 1];
+  let num1 = 0;
+  let num2 = 1;
+  let nextNum = 0;
 
-  let newArr = [];
+  while (nextNum <= maxFibValue) {
+    nextNum = num1 + num2;
 
-  let evenArr = [];
+    // Summation of even fib numbers
+    if (nextNum % 2 === 0) {
+      sum += nextNum;
+    }
 
-  for(i = 0; i < maxFibValue; i++) {
-    fibSeq.push(fibSeq[i] + fibSeq[i + 1]);
+    num1 = num2;
+    num2 = nextNum;
   }
-
-  fibSeq.forEach(function(e) {
-    if(e <= maxFibValue) {
-      newArr.push(e);
-    }
-  })
-
-  newArr.forEach(function(e) {
-    if(e % 2 === 0) {
-      evenArr.push(e);
-    }
-  })
-
-  evenArr.forEach(function(e) {
-    sum += e;
-  })
-
   return sum;
 }
 
 // bonus round
-function _highestFibonacciNumber (maxFibValue){
+function _highestFibonacciNumber(maxFibValue) {
   let highest = 0;
 
   //define your base case, validate your input
 
-
-  //do your work here
-
-  return highest;
-};
+  //do your work here;
+}
 
 /**
  * Do not modify code below.
  * You must be at least level 10 to understand.
  */
 module.exports = {
-  sumFibs : _sumFibs,
-  highestFibonacciNumber : _highestFibonacciNumber
+  sumFibs: _sumFibs,
+  highestFibonacciNumber: _highestFibonacciNumber
 };
